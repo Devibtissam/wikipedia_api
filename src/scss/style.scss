@@ -1,0 +1,149 @@
+/* VARIABLES */
+
+$primary-ff: 'Raleway', sans-serif;
+$secondary-ff: 'Zilla Slab', serif;
+
+$fw-300: 300;
+$fw-500: 500;
+
+$black: hsl(0, 0%, 0%);
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+body {
+  font-family: $primary-ff;
+  color: $black;
+  font-weight: $fw-300;
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+button {
+  background-color: transparent;
+  outline: unset;
+  border: none;
+}
+
+a,
+a:active,
+a:hover {
+  text-decoration: none;
+  color: unset;
+}
+
+main {
+  min-height: 100vh;
+}
+
+footer {
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  &__title {
+    margin: 2rem;
+    font-size: 2rem;
+    font-family: $secondary-ff;
+    font-weight: $fw-500;
+    text-transform: uppercase;
+  }
+
+  &__search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    width: 400px;
+
+    &-input {
+      padding: 0.5rem 1.75rem;
+      border-radius: 10px;
+      border: 1px solid $black;
+      width: 95%;
+    }
+    &-icon {
+      cursor: pointer;
+    }
+
+    &:hover {
+      box-shadow: 2px 2px 1px 1px $black;
+      transition: box-shadow 0.5s ease;
+    }
+  }
+}
+
+.search-result {
+  max-width: 95%;
+  margin-inline: auto;
+  margin-block: 2rem;
+
+  &__item {
+    margin: 1rem;
+    padding: 2rem;
+    border: 1px solid $black;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    letter-spacing: unset;
+    &__title {
+      font-weight: $fw-500;
+      font-family: $secondary-ff;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &__item:hover {
+    box-shadow: 2px 2px 1px 1px $black;
+    transition: box-shadow 0.5s ease;
+    cursor: pointer;
+  }
+
+  @media (min-width: 650px) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.25rem;
+
+    &__item {
+      margin: 0;
+      flex-basis: 49%;
+      align-self: stretch;
+    }
+  }
+
+  @media (min-width: 950px) {
+    &__item {
+      flex-basis: 30%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    &__item {
+      flex-basis: 24%;
+    }
+  }
+}
